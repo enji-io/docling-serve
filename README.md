@@ -13,6 +13,7 @@ Running [Docling](https://github.com/docling-project/docling) as an API service.
 - Learning how to [configure the webserver](./docs/configuration.md)
 - Get to know all [runtime options](./docs/usage.md) of the API
 - Explore useful [deployment examples](./docs/deployment.md)
+- Deploy with [BentoML](./docs/bentoml.md) for cloud-native serving
 - And more
 
 > [!NOTE]
@@ -79,6 +80,37 @@ make docling-serve-rocm-image
 For deployment using Docker Compose, see [docs/deployment.md](docs/deployment.md).
 
 Coming soon: `docling-serve-slim` images will reduce the size by skipping the model weights download.
+
+### BentoML Deployment
+
+Docling Serve can be deployed using [BentoML](https://www.bentoml.com/) for cloud-native ML serving with autoscaling, monitoring, and secret management.
+
+**Quick Start:**
+
+```bash
+# Install BentoML
+pip install bentoml
+
+# Build the Bento
+bentoml build
+
+# Test locally
+bentoml serve
+
+# Deploy to BentoCloud
+bentoml cloud login
+bentoml cloud push
+bentoml deployment create --name docling-serve-prod
+```
+
+For detailed instructions, see the [BentoML Deployment Guide](./docs/bentoml.md).
+
+**Benefits:**
+- 🚀 Cloud deployment with autoscaling
+- 🔐 Secure secret management
+- 📊 Built-in monitoring and observability
+- 🐳 Container export support
+- ☁️ BentoCloud integration
 
 ### Demonstration UI
 

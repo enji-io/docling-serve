@@ -337,6 +337,8 @@ celerybeat.pid
 
 # Environments
 .env
+.env.bentoml
+.env.*.local
 .venv
 env/
 venv/
@@ -449,3 +451,9 @@ cookies.txt
 
 # Examples
 /examples/splitted_pdf/*
+
+# BentoML
+.bentoml/
+.bento/
+bentos/
+*.bento

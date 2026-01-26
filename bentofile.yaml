@@ -1,0 +1,28 @@
+service: "service:DoclingServeService"
+labels:
+  owner: docling-project
+  stage: production
+
+python:
+  requirements_txt: "./requirements-bentoml.txt"
+  lock_packages: false
+
+include:
+  - "docling_serve/**/*.py"
+  - "service.py"
+
+exclude:
+  - "tests/**"
+  - "examples/**"
+  - "docs/**"
+  - ".github/**"
+  - "*.md"
+  - ".env*"
+  - ".git/**"
+  - "__pycache__/**"
+  - "*.pyc"
+  - ".pytest_cache/**"
+  - ".ruff_cache/**"
+  - "*.egg-info/**"
+  - "build/**"
+  - "dist/**"
