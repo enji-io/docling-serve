@@ -166,6 +166,16 @@ Manifest example: [docling-model-cache-deployment.yaml](./deploy-examples/doclin
 
 For local Docker or Podman execution, you can use any of the approaches above. Mounting a local directory with pre-downloaded models is the most reliable for repeated runs and avoids network dependencies.
 
+## Layout model variants and optional Hugging Face repos
+
+The `docling-tools models download` command accepts a single `layout` name, which downloads the default layout model (heron). Docling supports other layout models (e.g. egret-xlarge, egret-large) that can offer different accuracy/speed trade-offs. To download a specific Hugging Face model repo into your artifacts directory (e.g. for use with a custom Docling configuration), you can use:
+
+```sh
+docling-tools models download-hf-repo docling-project/docling-layout-egret-xlarge -o /path/to/artifacts
+```
+
+Note: Docling Serve does not currently expose layout model selection in the API; the server uses the default layout model. For a summary of which options are available for high-accuracy configuration, see [High-accuracy model configuration](./high_accuracy_configuration.md).
+
 ## Troubleshooting and Best Practices
 
 - If a required model is missing from the artifacts path, Docling Serve will raise a runtime error.

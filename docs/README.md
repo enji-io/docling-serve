@@ -4,6 +4,7 @@ This documentation pages explore the webserver configurations, runtime options, 
 
 - [Configuration](./configuration.md)
 - [Handling models](./models.md)
+- [High-accuracy model configuration](./high_accuracy_configuration.md)
 - [Usage](./usage.md)
 - [Deployment](./deployment.md)
 - [BentoML Deployment](./bentoml.md)
